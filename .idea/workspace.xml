@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2035f509-c178-4f4b-bd9c-df80477fddbe" name="Changes" comment="initial commit">
+    <list default="true" id="2035f509-c178-4f4b-bd9c-df80477fddbe" name="Changes" comment="add README and extend gitignore">
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c192227-501d-4884-8312-81719120fde0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c192227-501d-4884-8312-81719120fde0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/sql/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/sql/create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,21 +47,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nadir-tabouni"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nadir-tabouni&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/nadir-tabouni/Lumen.git",
-    "accountId": "9a504143-2e24-47d0-9265-ae41bd910840"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nadir-tabouni/Lumen.git&quot;,
+    &quot;accountId&quot;: &quot;9a504143-2e24-47d0-9265-ae41bd910840&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2fBk1fcrNUVaLGabjeIoudO3ac4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -60,33 +72,40 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Database Script.create_tables.sql.executor": "Run",
     "Flask server.Lumen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Neuer Ordner/webapp_portfolio-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "sqlite"
+    ],
+    "RunConfigurationTargetLRU": [
+      "5c192227-501d-4884-8312-81719120fde0"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nadir\PycharmProjects\Lumen" />
       <recent name="C:\Users\nadir\PycharmProjects\Lumen\webapp" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Database Script.create_tables.sql">
     <configuration name="create_tables.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/migrations/sql/create_tables.sql" />
       <script-mode>FILE</script-mode>
+      <data-source id="5c192227-501d-4884-8312-81719120fde0" />
       <method v="2" />
     </configuration>
     <configuration name="Lumen" type="Python.FlaskServer">
@@ -125,7 +144,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713281645394</updated>
-      <workItem from="1713281646111" duration="6916000" />
+      <workItem from="1713281646111" duration="12800000" />
+      <workItem from="1713615305006" duration="3680000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -143,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713288644078</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add README and extend gitignore">
+      <option name="closed" value="true" />
+      <created>1713289463485</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713289463485</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +179,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="add README and extend gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add README and extend gitignore" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lumen$Lumen.coverage" NAME="Lumen Coverage Results" MODIFIED="1713286930829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
