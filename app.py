@@ -64,7 +64,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password_hash, password):
             session['user_id'] = user.id
-            return redirect('/')
+            return redirect('/dashboard')
         else:
             return 'Ungültige Anmeldedaten!'
 
@@ -81,7 +81,15 @@ def logout():
 def login_guest():
     # Assign a temporary user_id for guest
     session['user_id'] = 'guest'
-    return redirect('/')
+    return redirect('/dashboard')
+
+
+@app.route('/dashboard')
+def dashboard():
+    if 'user_id' not in session:
+        # Redirect to login if not logged in or if the session is not established.
+        return redirect('/login')
+    return render_template('dashboard.html')
 
 
 if __name__ == '__main__':
