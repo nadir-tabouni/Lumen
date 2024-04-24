@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2035f509-c178-4f4b-bd9c-df80477fddbe" name="Changes" comment="implement basic login/register functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c192227-501d-4884-8312-81719120fde0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c192227-501d-4884-8312-81719120fde0.xml" afterDir="false" />
+    <list default="true" id="2035f509-c178-4f4b-bd9c-df80477fddbe" name="Changes" comment="refactor db and app.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/sql/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/sql/create_tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +84,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nadir\PycharmProjects\Lumen\docs" />
       <recent name="C:\Users\nadir\PycharmProjects\Lumen" />
       <recent name="C:\Users\nadir\PycharmProjects\Lumen\webapp" />
     </key>
@@ -135,6 +134,7 @@
       <updated>1713281645394</updated>
       <workItem from="1713281646111" duration="12800000" />
       <workItem from="1713615305006" duration="5492000" />
+      <workItem from="1713693322451" duration="1024000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -168,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713619163866</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor db and app.py">
+      <option name="closed" value="true" />
+      <created>1713693428942</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713693428942</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +186,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="add README and extend gitignore" />
     <MESSAGE value="implement basic login/register functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement basic login/register functionality" />
+    <MESSAGE value="refactor db and app.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor db and app.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lumen$Lumen.coverage" NAME="Lumen Coverage Results" MODIFIED="1713286930829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
