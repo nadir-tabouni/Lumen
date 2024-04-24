@@ -77,5 +77,12 @@ def logout():
     return redirect('/')
 
 
+@app.route('/login-guest', methods=['POST'])
+def login_guest():
+    # Assign a temporary user_id for guest
+    session['user_id'] = 'guest'
+    return redirect('/')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
