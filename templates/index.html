@@ -1,18 +1,20 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <title>Lumen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Lumen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<ul id="navigation">
-    {% for item in navigation %}
-        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-    {% endfor %}
-</ul>
-
-<h1>My Webpage</h1>
-{{ a_variable }}
-
-{# a comment #}
+    <div class="welcome-container">
+        <h1>Welcome to Lumen</h1>
+        <div class="button-container">
+            <a href="/login" class="button">Continue to Sign In</a>
+            <a href="/login-guest" class="button">Continue as Guest</a>
+            <a href="/register" class="button">Continue to Sign Up</a>
+        </div>
+    </div>
 </body>
 </html>
