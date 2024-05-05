@@ -1,11 +1,9 @@
-from fastapi.templating import Jinja2Templates
 from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
-templates = Jinja2Templates(directory="webapp/templates")
 
 # db config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lumenDB.sqlite'
