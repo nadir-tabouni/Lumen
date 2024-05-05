@@ -1,0 +1,19 @@
+<!-- templates/view_deck.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ deck.name }}</title>
+</head>
+<body>
+<h1>{{ deck.name }}</h1>
+<h2>Flashcards</h2>
+<ul>
+    {% for flashcard in deck.flashcards %}
+        <li>Q: {{ flashcard.question }} - A: {{ flashcard.answer }}</li>
+    {% endfor %}
+</ul>
+<a href="/deck/{{ deck.id }}/add-flashcard">Add Flashcard</a>
+</body>
+</html>

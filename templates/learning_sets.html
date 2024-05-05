@@ -1,0 +1,21 @@
+<!-- templates/learning_sets.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Sets</title>
+</head>
+<body>
+<h1>Flashcard Decks</h1>
+<a href="/new-deck">Create New Deck</a>
+<ul>
+    {% for deck in decks %}
+        <li>
+            <a href="/deck/{{ deck.id }}">{{ deck.name }}</a> - {{ deck.description }}
+            <a href="/deck/{{ deck.id }}/add-flashcard" style="margin-left: 10px;">Add Flashcard</a>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

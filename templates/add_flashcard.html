@@ -1,0 +1,17 @@
+<!-- templates/add_flashcard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Flashcard</title>
+</head>
+<body>
+<h1>Add Flashcard to {{ deck.name }}</h1>
+<form method="post">
+    Question: <input type="text" name="question" required><br>
+    Answer: <input type="text" name="answer" required><br>
+    <input type="submit" value="Add Flashcard">
+</form>
+</body>
+</html>
