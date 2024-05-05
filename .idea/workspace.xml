@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2035f509-c178-4f4b-bd9c-df80477fddbe" name="Changes" comment="adjustments to the requirements.txt">
+    <list default="true" id="2035f509-c178-4f4b-bd9c-df80477fddbe" name="Changes" comment="test design-decisions.md">
       <change beforePath="$PROJECT_DIR$/.idea/Lumen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lumen.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/design-decisions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/design-decisions.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Neuer Ordner/webapp_portfolio-main",
+    "last_opened_file_path": "C:/Users/nadir/PycharmProjects/Lumen/docs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,6 +90,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nadir\PycharmProjects\Lumen\docs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nadir\PycharmProjects\Lumen\docs" />
       <recent name="C:\Users\nadir\PycharmProjects\Lumen" />
@@ -222,7 +225,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714894296656</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adjustments to the requirements.txt&#10;add README.md">
+      <option name="closed" value="true" />
+      <created>1714900119827</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714900119827</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test design-decisions.md">
+      <option name="closed" value="true" />
+      <created>1714900279670</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714900279670</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +254,9 @@
     <MESSAGE value="refactor db and app.py" />
     <MESSAGE value="add docs files" />
     <MESSAGE value="adjustments to the requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjustments to the requirements.txt" />
+    <MESSAGE value="adjustments to the requirements.txt&#10;add README.md" />
+    <MESSAGE value="test design-decisions.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="test design-decisions.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lumen$Lumen.coverage" NAME="Lumen Coverage Results" MODIFIED="1713286930829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
