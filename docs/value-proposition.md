@@ -18,7 +18,7 @@ nav_order: 1
 
 ## The problem
 
-[Describe which problem your application tackles and why it is relevant.]
+Many students struggle with organizing their study materials and maintaining effective study habits. Traditional methods like paper flashcards can be cumbersome and lack the flexibility needed for modern, dynamic learning environments. The problem is especially relevant as learners seek more efficient and interactive ways to study.
 
 ## Our solution
 
