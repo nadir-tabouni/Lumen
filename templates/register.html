@@ -1,7 +1,26 @@
-<!-- templates/register.html -->
-<form method="post">
-    Username: <input type="text" name="username"><br>
-    E-Mail: <input type="email" name="email"><br>
-    Passwort: <input type="password" name="password"><br>
-    <input type="submit" value="Registrieren">
-</form>
+{% extends 'layout.html' %}
+
+{% block title %}
+    Register - Lumen
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Register</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required class="form-control">
+            </div>
+            <button type="submit" class="button">Register</button>
+        </form>
+    </div>
+{% endblock %}

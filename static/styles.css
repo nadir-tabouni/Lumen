@@ -1,30 +1,28 @@
+/* General Body Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
-.navbar {
-    background-color: #007BFF;
-    color: #ffffff;
+/* Header and Logo Styles */
+header {
     padding: 10px 20px;
+    background-color: #fff; /* Light background for the header */
     text-align: left;
 }
 
-
-ul {
-    list-style: none;
-    padding: 0;
+.logo {
+    font-family: 'Arial', sans-serif; /* Maintaining consistent font style */
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-li {
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #e9e9e9;
-    border-radius: 4px;
-}
-
+/* Content Container */
 .content-container {
     max-width: 800px;
     margin: 40px auto;
@@ -34,37 +32,53 @@ li {
     border-radius: 8px;
 }
 
-.button {
-    color: #fff;
-    background-color: #28a745;
-    border: none;
-    padding: 8px 15px;
-    margin: 5px;
+/* Deck Item Styles */
+.deck-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    overflow: hidden; /* Ensures no floating issues */
+}
+
+.deck-name {
+    color: #4CAF50;
+    font-weight: bold;
     text-decoration: none;
     display: inline-block;
+    margin-right: 10px;
+}
+
+.deck-description {
+    color: #666;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px; /* Truncate long descriptions */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.deck-actions {
+    float: right;
+}
+
+/* General Button Styles */
+.button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .button:hover {
     background-color: #218838;
 }
-
-/* Additional styles for error/info messages if they appear on these pages */
-.alert {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    color: #fff; /* White text */
-}
-
-.alert.info {
-    background-color: #007bff; /* Bootstrap primary */
-}
-
-.alert.error {
-    background-color: #dc3545; /* Bootstrap danger */
-}
-
 
 .button.delete {
     background-color: #dc3545;
@@ -74,10 +88,78 @@ li {
     background-color: #c82333;
 }
 
-.alert {
-    padding: 15px;
-    background-color: #f8d7da;
-    color: #721c24;
-    margin-bottom: 20px;
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+/* Alert Message Styles */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.alert.info {
+    background-color: #007bff;
+}
+
+.alert.error {
+    background-color: #dc3545;
+}
+.content-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content-container li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.content-container li button.delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.content-container a.button {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.content-container a.button.delete {
+    background-color: #dc3545;
+}
+
+.content-container a.button.delete:hover {
+    background-color: #c82333;
+}
+
+.flashcard {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }

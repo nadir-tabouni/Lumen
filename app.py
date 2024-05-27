@@ -1,6 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, render_template, request, redirect, session, flash
+from flask import Flask, render_template, request, redirect, session, jsonify
+from flask_sqlalchemy import SQLAlchemy
+import random
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
@@ -112,13 +115,16 @@ def dashboard():
 def profile():
     if 'user_id' not in session:
         return redirect('/login')  # Redirect to login if user is not logged in
-    return render_template('profile.html')
+
+    is_guest = session.get('user_id') == 'guest'
+    return render_template('profile.html', is_guest=is_guest)
 
 
 @app.route('/change-password', methods=['GET', 'POST'])
 def change_password():
-    if 'user_id' not in session:
-        return redirect('/login')  # Ensure the user is logged in
+    if 'user_id' not in session or session['user_id'] == 'guest':
+        flash('Access denied: guests cannot change passwords.', 'error')
+        return redirect('/profile')  # Redirect guests trying to access directly
 
     user = User.query.get(session['user_id'])
     if not user:
@@ -137,8 +143,8 @@ def change_password():
 
         user.password_hash = generate_password_hash(new_password)
         db.session.commit()
-        # Log out the user and redirect to the login page for re-authentication
-        session.pop('user_id', None)
+        flash('Password changed successfully.', 'info')
+        session.pop('user_id', None)  # Log out the user
         return redirect('/login')
 
     return render_template('change_password.html')
@@ -209,6 +215,26 @@ def delete_deck(deck_id):
         db.session.rollback()
         flash('Error deleting deck: ' + str(e), 'error')
     return redirect('/learning-sets')
+
+
+@app.route('/flashcard/<int:flashcard_id>/delete', methods=['POST'])
+def delete_flashcard(flashcard_id):
+    flashcard = Flashcard.query.get_or_404(flashcard_id)
+    if flashcard:
+        db.session.delete(flashcard)
+        db.session.commit()
+        flash('Flashcard deleted successfully.')
+    else:
+        flash('Flashcard not found.')
+    return redirect(request.referrer or '/learning-sets')
+
+
+@app.route('/deck/<int:deck_id>/learn')
+def learn_deck(deck_id):
+    deck = FlashcardDeck.query.get_or_404(deck_id)
+    flashcards = deck.flashcards.all()
+    random.shuffle(flashcards)  # Shuffle the order of flashcards
+    return render_template('learn_deck.html', deck=deck, flashcards=flashcards)
 
 
 if __name__ == '__main__':

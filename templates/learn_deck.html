@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Learn - {{ deck.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Learning: {{ deck.name }}</h1>
+        <div id="flashcards">
+            {% for flashcard in flashcards %}
+                <div class="flashcard" id="card-{{ loop.index }}" style="display: none;">
+                    <p><strong>Question:</strong> {{ flashcard.question }}</p>
+                    <p><strong>Answer:</strong> <span style="display: none;" class="answer">{{ flashcard.answer }}</span></p>
+                    <button onclick="toggleAnswer({{ loop.index }})">Show/Hide Answer</button>
+                </div>
+            {% endfor %}
+        </div>
+        <button onclick="nextCard()">Next Card</button>
+    </div>
+
+    <script>
+        var currentCard = 1;
+        var totalCards = {{ flashcards|length }};
+
+        function toggleAnswer(cardIndex) {
+            var answer = document.querySelector('#card-' + cardIndex + ' .answer');
+            answer.style.display = (answer.style.display == 'none') ? 'block' : 'none';
+        }
+
+        function nextCard() {
+            var current = document.getElementById('card-' + currentCard);
+            current.style.display = 'none';
+            currentCard = currentCard >= totalCards ? 1 : currentCard + 1;
+            var next = document.getElementById('card-' + currentCard);
+            next.style.display = 'block';
+        }
+
+        window.onload = function() {
+            document.getElementById('card-1').style.display = 'block';
+        }
+    </script>
+{% endblock %}

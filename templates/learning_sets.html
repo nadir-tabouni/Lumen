@@ -10,15 +10,14 @@
         <a href="/new-deck" class="button">Create New Deck</a>
         <ul>
             {% for deck in decks %}
-                <li>
-                    <span>{{ deck.name }} - {{ deck.description }}</span>
-                    <div style="float: right;">
-                        <a href="/deck/{{ deck.id }}/add-flashcard" class="button">Add Flashcard</a>
-                        <form action="/deck/{{ deck.id }}/delete" method="post" style="display: inline;">
-                            <button type="submit" class="button delete" onclick="return confirm('Are you sure you want to delete this deck?')">Delete Deck</button>
-                        </form>
+                <li class="deck-item">
+                    <span class="deck-name">{{ deck.name }}</span> - <span class="deck-description">{{ deck.description }}</span>
+                    <div class="deck-actions">
+                        <!-- Learn button (future implementation could link to a learning mode view) -->
+                        <a href="/deck/{{ deck.id }}/learn" class="button">Learn</a>
+                        <!-- Edit button takes you to the view_deck.html -->
+                        <a href="/deck/{{ deck.id }}" class="button">Edit</a>
                     </div>
-                    <div style="clear: both;"></div>
                 </li>
             {% endfor %}
         </ul>

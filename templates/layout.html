@@ -7,20 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<div class="navbar">
-    <a href="/dashboard">Lumen</a>
-</div>
-
-<!-- Flash messages section -->
-<div class="flash-messages">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert {{ category }}">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-</div>
+<header>
+    <a href="/dashboard" class="logo">Lumen</a>
+</header>
 
 {% block content %}
 {% endblock %}

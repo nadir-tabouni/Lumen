@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    View Deck - Lumen
+    Viewing Deck - {{ deck.name }}
 {% endblock %}
 
 {% block content %}
@@ -9,32 +9,20 @@
         <h1>Viewing Deck: {{ deck.name }}</h1>
         <p>{{ deck.description }}</p>
         <a href="/deck/{{ deck.id }}/add-flashcard" class="button">Add New Flashcard</a>
-        <form action="/deck/{{ deck.id }}/delete" method="post" onsubmit="return confirm('Are you sure you want to delete this deck?');">
-            <button type="submit" class="button">Delete Deck</button>
-        </form>
         <ul>
             {% for flashcard in deck.flashcards %}
                 <li>
-                    <div>
-                        <strong>Question:</strong> {{ flashcard.question }}
-                        <button onclick="toggleAnswer('answer-{{ flashcard.id }}')">Show/Hide Answer</button>
-                    </div>
-                    <div id="answer-{{ flashcard.id }}" style="display:none;">
-                        <strong>Answer:</strong> {{ flashcard.answer }}
-                    </div>
+                    <strong>Q:</strong> {{ flashcard.question }}
+                    <strong>A:</strong> {{ flashcard.answer }}
+                    <form action="/flashcard/{{ flashcard.id }}/delete" method="post" style="display: inline;">
+                        <button type="submit" class="button delete" onclick="return confirm('Are you sure you want to delete this flashcard?')">Delete Flashcard</button>
+                    </form>
                 </li>
             {% endfor %}
         </ul>
+        <form action="/deck/{{ deck.id }}/delete" method="post">
+            <button type="submit" class="button delete" onclick="return confirm('Are you sure you want to delete this deck?')">Delete Deck</button>
+        </form>
+        <a href="/learning-sets" class="button">Back to Decks</a>
     </div>
-
-    <script>
-        function toggleAnswer(elementId) {
-            var x = document.getElementById(elementId);
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-    </script>
 {% endblock %}
