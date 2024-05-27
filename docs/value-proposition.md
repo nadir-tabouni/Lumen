@@ -45,7 +45,9 @@ Personas:
 ## Customer journey
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
+flowchart TD;
+   Login/Register-->CreateFlashcards;
+   Login/Register-->AccessFlashcards;
+   CreateFlashcards-->AccessFlashcards;
+   AccessFlashcards-->Study;
 ```
