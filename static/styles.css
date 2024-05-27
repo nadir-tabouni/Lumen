@@ -15,7 +15,7 @@ body {
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #00008B; /* DarkBlue */
     border: none;
     color: lightgoldenrodyellow;
     padding: 16px 36px;
@@ -29,7 +29,7 @@ body {
 }
 
 .button:hover {
-    background-color: #45a049;
+    background-color: #0000FF; /*Blau*/
 }
 
 .navbar {
@@ -63,5 +63,6 @@ body {
 }
 
 .nav-button:hover {
-    background-color: #dcdcdc;
+    background-color: #00008B;
+    color: lightgoldenrodyellow;
 }
