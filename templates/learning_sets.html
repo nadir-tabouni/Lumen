@@ -1,21 +1,26 @@
-<!-- templates/learning_sets.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Sets</title>
-</head>
-<body>
-<h1>Flashcard Decks</h1>
-<a href="/new-deck">Create New Deck</a>
-<ul>
-    {% for deck in decks %}
-        <li>
-            <a href="/deck/{{ deck.id }}">{{ deck.name }}</a> - {{ deck.description }}
-            <a href="/deck/{{ deck.id }}/add-flashcard" style="margin-left: 10px;">Add Flashcard</a>
-        </li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block title %}
+    Learning Sets - Lumen
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Flashcard Decks</h1>
+        <a href="/new-deck" class="button">Create New Deck</a>
+        <ul>
+            {% for deck in decks %}
+                <li>
+                    <span>{{ deck.name }} - {{ deck.description }}</span>
+                    <div style="float: right;">
+                        <a href="/deck/{{ deck.id }}/add-flashcard" class="button">Add Flashcard</a>
+                        <form action="/deck/{{ deck.id }}/delete" method="post" style="display: inline;">
+                            <button type="submit" class="button delete" onclick="return confirm('Are you sure you want to delete this deck?')">Delete Deck</button>
+                        </form>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

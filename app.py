@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, render_template, request, redirect, session, flash
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
@@ -33,12 +33,7 @@ class Flashcard(db.Model):
     question = db.Column(db.String(255), nullable=False)
     answer = db.Column(db.String(255), nullable=False)
     deck_id = db.Column(db.Integer, db.ForeignKey('flashcard_deck.id'), nullable=False)
-    deck = db.relationship('FlashcardDeck', backref=db.backref('flashcards', lazy=True))
-
-    def __init__(self, question, answer, deck_id):
-        self.question = question
-        self.answer = answer
-        self.deck_id = deck_id
+    deck = db.relationship('FlashcardDeck', backref=db.backref('flashcards', lazy='dynamic'))
 
 
 @app.before_request
@@ -154,6 +149,7 @@ def learning_sets():
     decks = FlashcardDeck.query.all()
     return render_template('learning_sets.html', decks=decks)
 
+
 @app.route('/new-deck', methods=['GET', 'POST'])
 def new_deck():
     if request.method == 'POST':
@@ -185,6 +181,34 @@ def add_flashcard(deck_id):
             db.session.commit()
             return redirect(f'/deck/{deck_id}')
     return render_template('add_flashcard.html', deck=deck)
+
+
+@app.route('/flashcard/<int:flashcard_id>/edit', methods=['GET', 'POST'])
+def edit_flashcard(flashcard_id):
+    flashcard = Flashcard.query.get_or_404(flashcard_id)
+    if request.method == 'POST':
+        flashcard.question = request.form['question']
+        flashcard.answer = request.form['answer']
+        db.session.commit()
+        flash('Flashcard updated successfully.')
+        return redirect(f'/deck/{flashcard.deck_id}')
+    return render_template('edit_flashcard.html', flashcard=flashcard)
+
+
+@app.route('/deck/<int:deck_id>/delete', methods=['POST'])
+def delete_deck(deck_id):
+    deck = FlashcardDeck.query.get_or_404(deck_id)
+    try:
+        # First, remove all associated flashcards to avoid foreign key constraint errors
+        Flashcard.query.filter_by(deck_id=deck_id).delete()
+        # Now, remove the deck itself
+        db.session.delete(deck)
+        db.session.commit()
+        flash('Deck deleted successfully.', 'info')
+    except Exception as e:
+        db.session.rollback()
+        flash('Error deleting deck: ' + str(e), 'error')
+    return redirect('/learning-sets')
 
 
 if __name__ == '__main__':

@@ -1,20 +1,16 @@
-<!-- templates/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Lumen</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="welcome-container">
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home - Lumen
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
         <h1>Welcome to Lumen</h1>
-        <div class="button-container">
-            <a href="/login" class="button">Continue to Sign In</a>
-            <a href="/login-guest" class="button">Continue as Guest</a>
-            <a href="/register" class="button">Continue to Sign Up</a>
+        <p>The premier place to create and manage your flashcard decks.</p>
+        <div>
+            <a href="/login" class="button">Sign In</a>
+            <a href="/register" class="button">Sign Up</a>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

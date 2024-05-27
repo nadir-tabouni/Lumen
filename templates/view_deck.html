@@ -1,19 +1,40 @@
-<!-- templates/view_deck.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ deck.name }}</title>
-</head>
-<body>
-<h1>{{ deck.name }}</h1>
-<h2>Flashcards</h2>
-<ul>
-    {% for flashcard in deck.flashcards %}
-        <li>Q: {{ flashcard.question }} - A: {{ flashcard.answer }}</li>
-    {% endfor %}
-</ul>
-<a href="/deck/{{ deck.id }}/add-flashcard">Add Flashcard</a>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block title %}
+    View Deck - Lumen
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Viewing Deck: {{ deck.name }}</h1>
+        <p>{{ deck.description }}</p>
+        <a href="/deck/{{ deck.id }}/add-flashcard" class="button">Add New Flashcard</a>
+        <form action="/deck/{{ deck.id }}/delete" method="post" onsubmit="return confirm('Are you sure you want to delete this deck?');">
+            <button type="submit" class="button">Delete Deck</button>
+        </form>
+        <ul>
+            {% for flashcard in deck.flashcards %}
+                <li>
+                    <div>
+                        <strong>Question:</strong> {{ flashcard.question }}
+                        <button onclick="toggleAnswer('answer-{{ flashcard.id }}')">Show/Hide Answer</button>
+                    </div>
+                    <div id="answer-{{ flashcard.id }}" style="display:none;">
+                        <strong>Answer:</strong> {{ flashcard.answer }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        function toggleAnswer(elementId) {
+            var x = document.getElementById(elementId);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,67 +1,83 @@
-/* static/styles.css */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 50px;
-}
-
-.welcome-container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.button-container {
-    margin: 20px;
-}
-
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: lightgoldenrodyellow;
-    padding: 16px 36px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #45a049;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f8f8;
+    background-color: #007BFF;
+    color: #ffffff;
     padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
-.nav-button {
-    padding: 10px 15px;
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #e9e9e9;
+    border-radius: 4px;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.button {
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
     text-decoration: none;
-    color: #333;
-    background-color: #e7e7e7;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.nav-button.home {
-
+.button:hover {
+    background-color: #218838;
 }
 
-.nav-button.center {
-
+/* Additional styles for error/info messages if they appear on these pages */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: #fff; /* White text */
 }
 
-.nav-button.right {
-
+.alert.info {
+    background-color: #007bff; /* Bootstrap primary */
 }
 
-.nav-button:hover {
-    background-color: #dcdcdc;
+.alert.error {
+    background-color: #dc3545; /* Bootstrap danger */
+}
+
+
+.button.delete {
+    background-color: #dc3545;
+}
+
+.button.delete:hover {
+    background-color: #c82333;
+}
+
+.alert {
+    padding: 15px;
+    background-color: #f8d7da;
+    color: #721c24;
+    margin-bottom: 20px;
+    border-radius: 4px;
 }
