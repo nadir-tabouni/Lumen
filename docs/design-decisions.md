@@ -61,8 +61,6 @@ We intend to scale up the application later on, since we see substantial busines
 
 
 Therefore, we will likely:
-Therefore, we will likely:
-Therefore, we will likely:
 
 + Change the database schema multiple times along the way, and
 + Switch to a more capable database system at some point.

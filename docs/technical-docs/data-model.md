@@ -5,7 +5,7 @@ nav_order: 2
 ---
 
 {: .label }
-[Jane Dane]
+[Cennet Kurnaz]
 
 {: .no_toc }
 # Data model
