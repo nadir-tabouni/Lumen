@@ -46,14 +46,6 @@ Personas:
 
 ```mermaid
 graph TD;
-    Login/Register-->CreateFlashcards;
-    Login/Register-->AccessFlashcards;
-    CreateFlashcards-->AccessFlashcards;
-    AccessFlashcards-->Study;
-```
-
-```mermaid
-graph TD;
     A-->B;
     A-->C;
 ```
