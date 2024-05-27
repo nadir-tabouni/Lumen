@@ -51,3 +51,9 @@ graph TD;
     CreateFlashcards-->AccessFlashcards;
     AccessFlashcards-->Study;
 ```
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+```
