@@ -46,8 +46,8 @@ Personas:
 
 ```mermaid
 graph TD;
-    Login/Register-->Create Flashcards;
-    Login/Register-->Access Flashcards;
-    Create Flashcards-->Access Flashcards;
-    Access Flashcards-->Study;
+    Login/Register-->CreateFlashcards;
+    Login/Register-->AccessFlashcards;
+    CreateFlashcards-->AccessFlashcards;
+    AccessFlashcards-->Study;
 ```
