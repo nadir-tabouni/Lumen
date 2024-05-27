@@ -3,32 +3,27 @@ title: Home
 nav_order: 0
 ---
 
-{: .attention }
-> Any text enclosed by `[ ]` are placeholders, including the opening and closing brackets.
->
-> You may delete this `attention` box.
+# Lumen
 
-# [Project Name]
-
-[Project description]
+Lumen is a web application designed to facilitate learning by allowing users to create, access, and study with customizable flashcard sets. This application aims to enhance the learning experience by providing a simple, intuitive, and effective tool for learners.
 
 ## Team members
 
-### [Jane Dane]
+### Nadir Tabouni
 
 About
-: Some info about Jane
+: Nadir Tabouni is a Information Systems student and software developer. He is responsible for the backend development of Lumen, focusing on server-side logic and database management.
 
 Matr.-Nr.
-: 1234567
+: 	77211931699
 
-### [Joe Doe]
+### Cennet Kurnaz
 
 About
-: Some info about Joe
+: Cennet Kurnaz is a Information Systems student with a focus on frontend development. She works on designing and implementing the user interface.
 
 Matr.-Nr.
-: 1234567
+: 77211933024
 
 ## Eidesstattliche Erklärung
 
