@@ -90,12 +90,6 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/logout')
-def logout():
-    session.pop('user_id', None)
-    return redirect('/')
-
-
 @app.route('/login-guest', methods=['POST'])
 def login_guest():
     # Assign a temporary user_id for guest
@@ -235,6 +229,12 @@ def learn_deck(deck_id):
     flashcards = deck.flashcards.all()
     random.shuffle(flashcards)  # Shuffle the order of flashcards
     return render_template('learn_deck.html', deck=deck, flashcards=flashcards)
+
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.pop('user_id', None)
+    return redirect('/')
 
 
 if __name__ == '__main__':

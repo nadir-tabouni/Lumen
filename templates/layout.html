@@ -9,6 +9,11 @@
 <body>
 <header>
     <a href="/dashboard" class="logo">Lumen</a>
+    {% if session.get('user_id') %}
+        <form action="/logout" method="post" style="display: inline;">
+            <button type="submit" class="button">Logout</button>
+        </form>
+    {% endif %}
 </header>
 
 {% block content %}
