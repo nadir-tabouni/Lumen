@@ -9,11 +9,11 @@
 <body>
 <header>
     <a href="/dashboard" class="logo">Lumen</a>
-    {% if session.get('user_id') %}
     <nav class="user-actions">
-        <a href="/profile" class="button profile">Profile</a>
+        {% if session.get('user_id') %}
+            <a href="/profile" class="button profile">Profile</a>
+        {% endif %}
     </nav>
-    {% endif %}
 </header>
 
 {% block content %}
