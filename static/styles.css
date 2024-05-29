@@ -12,6 +12,9 @@ header {
     padding: 10px 20px;
     background-color: #fff; /* Light background for the header */
     text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -20,6 +23,15 @@ header {
     color: #333;
     text-decoration: none;
     font-weight: bold;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions .button {
+    margin-left: 10px;
 }
 
 /* Content Container */
@@ -85,6 +97,15 @@ header {
 }
 
 .button.delete:hover {
+    background-color: #c82333;
+}
+
+.button.logout {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+.button.logout:hover {
     background-color: #c82333;
 }
 

@@ -231,7 +231,7 @@ def learn_deck(deck_id):
     return render_template('learn_deck.html', deck=deck, flashcards=flashcards)
 
 
-@app.route('/logout', methods=['POST'])
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
     session.pop('user_id', None)
     return redirect('/')

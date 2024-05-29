@@ -12,5 +12,8 @@
         {% else %}
             <p>Welcome, Guest! Limited options available.</p>
         {% endif %}
+        <form action="/logout" method="post" style="margin-top: 20px;">
+            <button type="submit" class="button logout">Logout</button>
+        </form>
     </div>
 {% endblock %}
