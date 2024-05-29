@@ -117,3 +117,8 @@ cython_debug/
 
 #idea
 .idea/
+
+# JetBrains project files
+.idea/Lumen.iml
+.idea/misc.xml
+.idea/workspace.xml
