@@ -7,6 +7,15 @@
 {% block content %}
     <div class="content-container">
         <h1>Flashcard Decks</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
         <a href="/new-deck" class="button">Create New Deck</a>
         <ul>
             {% for deck in decks %}

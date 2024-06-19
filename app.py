@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, render_template, request, redirect, session, flash
 import random
-import os
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
@@ -11,10 +10,6 @@ app.secret_key = 'secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lumenDB.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
-# Remove existing database file if it exists
-if os.path.exists('lumenDB.sqlite'):
-    os.remove('lumenDB.sqlite')
 
 
 class User(db.Model):
@@ -153,7 +148,10 @@ def change_password():
 @app.route('/learning-sets')
 def learning_sets():
     user_id = session.get('user_id')
-    decks = FlashcardDeck.query.filter_by(user_id=user_id).all()
+    if user_id == 'guest':
+        decks = FlashcardDeck.query.filter_by(user_id=0).all()
+    else:
+        decks = FlashcardDeck.query.filter_by(user_id=user_id).all()
     return render_template('learning_sets.html', decks=decks)
 
 
@@ -163,6 +161,13 @@ def new_deck():
         name = request.form['name']
         description = request.form.get('description', '')
         user_id = session.get('user_id')
+        if user_id == 'guest':
+            user_id = 0  # Guests have no user_id
+            existing_deck = FlashcardDeck.query.filter_by(user_id=0).first()
+            if existing_deck:
+                flash('Guests can only create one deck. Please register for an account to create more decks.')
+                return redirect('/learning-sets')
+
         if name:
             new_deck = FlashcardDeck(name=name, description=description, user_id=user_id)
             db.session.add(new_deck)
@@ -241,6 +246,11 @@ def learn_deck(deck_id):
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
+    if session.get('user_id') == 'guest':
+        # Delete guest decks on logout
+        Flashcard.query.filter(Flashcard.deck.has(user_id=0)).delete()
+        FlashcardDeck.query.filter_by(user_id=0).delete()
+        db.session.commit()
     session.pop('user_id', None)
     return redirect('/')
 
