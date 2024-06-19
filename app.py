@@ -1,9 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, render_template, request, redirect, session, flash
-from flask import Flask, render_template, request, redirect, session, jsonify
-from flask_sqlalchemy import SQLAlchemy
 import random
+import os
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
@@ -12,6 +11,10 @@ app.secret_key = 'secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lumenDB.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+# Remove existing database file if it exists
+if os.path.exists('lumenDB.sqlite'):
+    os.remove('lumenDB.sqlite')
 
 
 class User(db.Model):
@@ -25,10 +28,13 @@ class FlashcardDeck(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), nullable=False)
     description = db.Column(db.String(300), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('decks', lazy=True))
 
-    def __init__(self, name, description=None):
+    def __init__(self, name, description, user_id):
         self.name = name
         self.description = description
+        self.user_id = user_id
 
 
 class Flashcard(db.Model):
@@ -146,7 +152,8 @@ def change_password():
 
 @app.route('/learning-sets')
 def learning_sets():
-    decks = FlashcardDeck.query.all()
+    user_id = session.get('user_id')
+    decks = FlashcardDeck.query.filter_by(user_id=user_id).all()
     return render_template('learning_sets.html', decks=decks)
 
 
@@ -155,8 +162,9 @@ def new_deck():
     if request.method == 'POST':
         name = request.form['name']
         description = request.form.get('description', '')
+        user_id = session.get('user_id')
         if name:
-            new_deck = FlashcardDeck(name=name, description=description)
+            new_deck = FlashcardDeck(name=name, description=description, user_id=user_id)
             db.session.add(new_deck)
             db.session.commit()
             return redirect('/learning-sets')
