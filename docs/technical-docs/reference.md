@@ -5,7 +5,7 @@ nav_order: 3
 ---
 
 {: .label }
-[Nadir Tabouni]
+Nadir Tabouni
 
 {: .no_toc }
 # Reference documentation

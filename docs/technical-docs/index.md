@@ -5,6 +5,6 @@ nav_order: 2
 ---
 
 {: .label }
-[Nadir Tabouni]
+Nadir Tabouni
 
 # Technical documentation

@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 {: .label }
-[Nadir Tabouni]
+Nadir Tabouni
 
 {: .no_toc }
 # Architecture

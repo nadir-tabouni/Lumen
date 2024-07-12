@@ -4,7 +4,7 @@ nav_order: 4
 ---
 
 {: .label }
-[Cennet Kurnaz]
+Cennet Kurnaz
 
 {: .no_toc }
 # User evaluation

@@ -4,7 +4,7 @@ nav_order: 1
 ---
 
 {: .label }
-[Cennet Kurnaz]
+Cennet Kurnaz
 
 {: .no_toc }
 # Value proposition

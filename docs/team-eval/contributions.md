@@ -20,13 +20,18 @@ nav_order: 4
 ## Cennet Kurnaz
 
 Contributions
-: Lorem ipsum dolor
-: Consetetur sadipscing elitr
-: ...
+: Logo design
+: Documentation
+: Database design
+: Use Case diagram
+: User evaluation
+
 
 ## Nadir Tabouni
 
 Contributions
-: Diam nonumy eirmod
-: Tempor invidunt ut labore
-: ...
+: Documentation
+: Login/register functionality
+: Database implementation
+: Change password functionality
+: Flashcard Deck/Flashcard creation, editing and learning 
