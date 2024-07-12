@@ -26,7 +26,7 @@ Lumen addresses these challenges by providing a digital platform for creating, a
 
 - Flashcard Creation and Access: Users can easily create their own flashcards and access them anytime, anywhere.
 - Community Sharing: Users can access and study flashcards created by others, fostering a collaborative learning environment.
-- Study Mode with Leitner System: Lumen incorporates the Leitner System, a proven study technique, to help users efficiently retain information through spaced repetition.
+- Study Mode: Lumen ensures efficient learning by utilizing a custom algorithm, focusing on incorrectly answered flashcards.
 
 ## Target user
 
