@@ -9,35 +9,62 @@
         <h1>Learning: {{ deck.name }}</h1>
         <div id="flashcards">
             {% for flashcard in flashcards %}
-                <div class="flashcard" id="card-{{ loop.index }}" style="display: none;">
+                <div class="flashcard" id="card-{{ flashcard.id }}" style="display: none;">
                     <p><strong>Question:</strong> {{ flashcard.question }}</p>
                     <p><strong>Answer:</strong> <span style="display: none;" class="answer">{{ flashcard.answer }}</span></p>
-                    <button onclick="toggleAnswer({{ loop.index }})">Show/Hide Answer</button>
+                    <button onclick="toggleAnswer({{ flashcard.id }})">Show/Hide Answer</button>
+                    <br>
+                    <button onclick="markCard({{ flashcard.id }}, true)">I knew it</button>
+                    <button onclick="markCard({{ flashcard.id }}, false)">I didn't know it</button>
                 </div>
             {% endfor %}
         </div>
-        <button onclick="nextCard()">Next Card</button>
+        <button id="next-btn" onclick="nextCard()">Next Card</button>
+        <div id="success-message" style="display: none;">
+            <h2>Success! You have learned all flashcards.</h2>
+            <button onclick="location.href='/dashboard'">Go to Dashboard</button>
+        </div>
     </div>
 
     <script>
-        var currentCard = 1;
-        var totalCards = {{ flashcards|length }};
+        var flashcards = {{ flashcards | tojson }};
+        var currentCardIndex = 0;
+        var unknownFlashcards = [];
+        var currentCardId = flashcards[currentCardIndex].id;
 
-        function toggleAnswer(cardIndex) {
-            var answer = document.querySelector('#card-' + cardIndex + ' .answer');
+        function toggleAnswer(cardId) {
+            var answer = document.querySelector('#card-' + cardId + ' .answer');
             answer.style.display = (answer.style.display == 'none') ? 'block' : 'none';
         }
 
+        function markCard(cardId, knewIt) {
+            var currentCard = document.getElementById('card-' + cardId);
+            currentCard.style.display = 'none';
+            if (!knewIt) {
+                unknownFlashcards.push(cardId);
+            }
+            nextCard();
+        }
+
         function nextCard() {
-            var current = document.getElementById('card-' + currentCard);
-            current.style.display = 'none';
-            currentCard = currentCard >= totalCards ? 1 : currentCard + 1;
-            var next = document.getElementById('card-' + currentCard);
-            next.style.display = 'block';
+            if (unknownFlashcards.length === 0 && currentCardIndex >= flashcards.length - 1) {
+                document.getElementById('next-btn').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                return;
+            }
+
+            currentCardIndex++;
+            if (currentCardIndex >= flashcards.length) {
+                currentCardIndex = 0;
+                flashcards = unknownFlashcards.map(id => flashcards.find(card => card.id === id));
+                unknownFlashcards = [];
+            }
+            currentCardId = flashcards[currentCardIndex].id;
+            document.getElementById('card-' + currentCardId).style.display = 'block';
         }
 
         window.onload = function() {
-            document.getElementById('card-1').style.display = 'block';
+            document.getElementById('card-' + currentCardId).style.display = 'block';
         }
     </script>
 {% endblock %}

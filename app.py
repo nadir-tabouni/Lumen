@@ -240,8 +240,8 @@ def delete_flashcard(flashcard_id):
 def learn_deck(deck_id):
     deck = FlashcardDeck.query.get_or_404(deck_id)
     flashcards = deck.flashcards.all()
-    random.shuffle(flashcards)  # Shuffle the order of flashcards
-    return render_template('learn_deck.html', deck=deck, flashcards=flashcards)
+    flashcards_list = [{"id": flashcard.id, "question": flashcard.question, "answer": flashcard.answer} for flashcard in flashcards]
+    return render_template('learn_deck.html', deck=deck, flashcards=flashcards_list)
 
 
 @app.route('/logout', methods=['GET', 'POST'])
