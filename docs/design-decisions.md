@@ -108,5 +108,123 @@ We regarded two alternative options:
 
 ---
 
+## 03: Password Hashing Strategy
+
+
+### Meta
+
+
+Status
+: **Decided**
+
+
+Updated
+: 20-Apr-2024
+
+
+### Problem statement
+
+
+How should we securely store user passwords to protect against data breaches?
+
+
+Secure storage of user passwords is critical to ensure that, in the event of a data leak, the passwords remain protected and unusable by malicious actors.
+
+
+Therefore, we will likely:
+
+
++ Regularly review and update our security practices to maintain a high level of protection against emerging threats.
+
+
+### Decision
+
+
+We chose to use werkzeug.security for password hashing.
+
+
+werkzeug.security provides a high level of security and is straightforward to implement, making it an ideal choice for our application.
+When using werkzeug.security for password hashing, a password is converted into a unique hash value that cannot be reversed.
+
+
+*Decision was taken by:* github.com/nadir-tabouni
+
+
+### Regarded options
+
+
+We regarded two alternative options:
+
+
++ werkzeug.security
++ Hashmaps
+
+
+| Criterion                       | werkzeug.security                                | Hashmaps                                       |
+|---------------------------------|--------------------------------------------------|------------------------------------------------|
+| **Security**                    | ✔️ High security with strong hashing algorithms  | ❌ Lower security                               |
+| **Implementation Ease**         | ✔️  Simple to implement with built-in functions  | ❌ More complex, requires custom implementation |
+
+
+---
+
+## 04: Choice of Learning Method
+
+
+### Meta
+
+
+Status
+: **Decided**
+
+
+Updated
+: 22-Jun-2024
+
+
+### Problem statement
+
+
+How should we implement the flashcard learning method to maximize effectiveness and retention for users?
+
+
+We need to decide whether to keep displaying flashcards without any specific system for users to go through at their own pace, implement the Leitner system with three categories of knowledge, or create a variation of the Leitner system where only incorrectly answered questions are repeated until all cards are correctly answered.
+
+
+### Decision
+
+
+We chose to implement a variation of the Leitner system.
+
+
+In this variation, users will mark each flashcard as either "correctly answered" or "incorrectly answered." Only the flashcards marked as "incorrectly answered" will be repeated until all cards are marked as "correctly answered."
+This method ensures focused repetition on areas where the user needs the most improvement while keeping the system simple and effective.
+
+
+*Decision was taken by:* github.com/nadir-tabouni, github.com/Cennet99
+
+
+### Regarded options
+
+
+We regarded two alternative options:
+
+
++ Simple flashcard display without a specific system
++ Traditional Leitner system with three categories
++ Variation of the Leitner system focusing on incorrect answers
+
+
+| Criterion                  | Simple Flashcards                           | Traditional Leitner System                | Variation of Leitner System                       |
+|----------------------------|---------------------------------------------|-------------------------------------------|---------------------------------------------------|
+| **Effectiveness**          | ❌ Limited, user may not focus on weak areas | ✔️ Effective, systematic repetition       | ✔️ Effective, targeted repetition                 |
+| **Implementation Ease**    | ✔️ Simple to implement (already set up)     | ❌ complex, detailed algorithm             | ❔ Moderate complexity, simpler algorithm          |
+| **User Engagement**        | ❌ May lead to user boredom                  | ✔️ Engages users with structured learning | ✔️  Keeps users engaged by focusing on challenges |
+
+
+---
+
+
+
 
 
