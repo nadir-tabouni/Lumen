@@ -12,11 +12,14 @@
         <ul>
             {% for flashcard in deck.flashcards %}
                 <li>
-                    <strong>Q:</strong> {{ flashcard.question }}
-                    <strong>A:</strong> {{ flashcard.answer }}
-                    <form action="/flashcard/{{ flashcard.id }}/delete" method="post" style="display: inline;">
-                        <button type="submit" class="button delete" onclick="return confirm('Are you sure you want to delete this flashcard?')">Delete Flashcard</button>
-                    </form>
+                    <strong>Q:</strong> {{ flashcard.question }}<br>
+                    <strong>A:</strong> {{ flashcard.answer }}<br>
+                    <div class="flashcard-actions">
+                        <a href="/flashcard/{{ flashcard.id }}/edit" class="button edit">Edit Flashcard</a>
+                        <form action="/flashcard/{{ flashcard.id }}/delete" method="post" style="display: inline;">
+                            <button type="submit" class="button delete" onclick="return confirm('Are you sure you want to delete this flashcard?')">Delete Flashcard</button>
+                        </form>
+                    </div>
                 </li>
             {% endfor %}
         </ul>

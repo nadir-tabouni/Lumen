@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Edit Flashcard - {{ flashcard.question }}
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Edit Flashcard</h1>
+        <form action="/flashcard/{{ flashcard.id }}/edit" method="post">
+            <label for="question">Question:</label>
+            <input type="text" id="question" name="question" value="{{ flashcard.question }}" required>
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" value="{{ flashcard.answer }}" required>
+            <button type="submit" class="button">Save Changes</button>
+        </form>
+        <a href="/deck/{{ flashcard.deck_id }}" class="button">Back to Deck</a>
+    </div>
+{% endblock %}
