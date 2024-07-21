@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Browse Flashcard Decks - Lumen
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Browse Flashcard Decks</h1>
+        <form method="POST" action="/browse-decks">
+            <input type="text" name="search" placeholder="Search for decks..." value="{{ search_query }}">
+            <button type="submit" class="button">Search</button>
+        </form>
+        <ul>
+            {% for deck in decks %}
+                <li class="deck-item">
+                    <span class="deck-name">{{ deck.name }}</span> - <span class="deck-description">{{ deck.description }}</span>
+                    <div class="deck-actions">
+                        <a href="/deck/{{ deck.id }}/learn" class="button">Learn</a>
+                        <a href="/deck/{{ deck.id }}" class="button">Edit</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/dashboard" class="button">Back to Dashboard</a>
+    </div>
+{% endblock %}

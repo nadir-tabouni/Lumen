@@ -60,7 +60,7 @@ def register():
         # Check if username or email already exists
         user_exists = User.query.filter((User.username == username) | (User.email == email)).first()
         if user_exists:
-            return "Benutzername oder E-Mail bereits verwendet!"
+            return "Username or email already in use!"
 
         # Hash the password
         hashed_password = generate_password_hash(password)
@@ -86,7 +86,7 @@ def login():
             session['user_id'] = user.id
             return redirect('/dashboard')
         else:
-            return 'Ungültige Anmeldedaten!'
+            return 'Invalid login credentials!'
 
     return render_template('login.html')
 
@@ -253,6 +253,18 @@ def logout():
         db.session.commit()
     session.pop('user_id', None)
     return redirect('/')
+
+
+@app.route('/browse-decks', methods=['GET', 'POST'])
+def browse_decks():
+    search_query = request.form.get('search', '')
+
+    query = FlashcardDeck.query
+    if search_query:
+        query = query.filter(FlashcardDeck.name.contains(search_query))
+
+    decks = query.all()
+    return render_template('browse_decks.html', decks=decks, search_query=search_query)
 
 
 if __name__ == '__main__':

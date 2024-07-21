@@ -248,6 +248,26 @@ Nadir Tabouni
 + Redirects to the /learning-sets page with a success message
 
 ---
+
+### `browse_decks()`
+
+
+**Route:** `/browse-decks`
+
+
+**Methods:** `POST` `GET`
+
+
+**Purpose:** Allow users to browse and search for flashcard decks.
+
+
+**Sample output:**
+
++ GET: Browser shows the browse decks page with a list of all decks (browse_decks.html)
++ POST (with search query): Browser shows the browse decks page with a list of decks matching the search query (browse_decks.html)
+
+---
+
 ## Flashcard Management
 
 
