@@ -40,13 +40,13 @@ Specifically, we aim to identify any common obstacles or frustrations encountere
 
 
 + Participant Recruitment:
- + Recruit at least 5 users of different ages and segments of our target audience
+  + Recruit at least 5 users of different ages and segments of our target audience
 + Task Description:
- + Instruct participants to create two new flashcard decks, add at least 5 flashcards to each, and then edit the decks and its flashcards.
+  + Instruct participants to create two new flashcard decks, add at least 5 flashcards to each, and then edit the decks and its flashcards.
 + Observation:
- + Observe each participant as they complete the tasks. Record any difficulties or questions they have.
+  + Observe each participant as they complete the tasks. Record any difficulties or questions they have.
 + User Feedback:
- + After the tasks, gather detailed feedback on their experience, difficulties faced, and suggestions for improvement.
+  + After the tasks, gather detailed feedback on their experience, difficulties faced, and suggestions for improvement.
 
 
 ### Results
