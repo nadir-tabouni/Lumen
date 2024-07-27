@@ -41,6 +41,7 @@ erDiagram
     FLASHCARDDECK ||--o{ FLASHCARD : contains
 ```
 
+
 ### Description:
 - **USER**: The table stores user data such as `id`, `username`, `email`, and `password_hash`.
 - **FLASHCARDDECK**: This table stores information about flashcard decks such as `id`, `name`, `description`, and `user_id`, which is a foreign key referring to the `USER` table.
