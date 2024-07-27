@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Edit Deck - {{ deck.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Edit Deck: {{ deck.name }}</h1>
+        <form action="/deck/{{ deck.id }}/edit" method="post">
+            <div>
+                <label for="name">Deck Name:</label>
+                <input type="text" id="name" name="name" value="{{ deck.name }}" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description">{{ deck.description }}</textarea>
+            </div>
+            <button type="submit" class="button">Save Changes</button>
+        </form>
+        <a href="/deck/{{ deck.id }}" class="button">Cancel</a>
+    </div>
+{% endblock %}
