@@ -267,5 +267,17 @@ def browse_decks():
     return render_template('browse_decks.html', decks=decks, search_query=search_query)
 
 
+@app.route('/deck/<int:deck_id>/edit', methods=['GET', 'POST'])
+def edit_deck(deck_id):
+    deck = FlashcardDeck.query.get_or_404(deck_id)
+    if request.method == 'POST':
+        deck.name = request.form['name']
+        deck.description = request.form['description']
+        db.session.commit()
+        flash('Deck updated successfully.')
+        return redirect(f'/deck/{deck_id}')
+    return render_template('edit_deck.html', deck=deck)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
