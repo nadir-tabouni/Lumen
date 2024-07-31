@@ -35,7 +35,7 @@ Key Features:
 + Search and Browse: 
   + Users can search and browse through all available flashcard decks.
 
-![Use Case Diagram](/webapp/static/images/use_case_diagram.jpg)
+![Use Case Diagram](/docs/images/use_case_diagram.png)
 
 ## Codemap
 
