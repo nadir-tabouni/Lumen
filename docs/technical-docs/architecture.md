@@ -52,47 +52,56 @@ Flashcard
 }
 
     class Views {
-        index.html
-        login.html
-        register.html
-        dashboard.html
-        profile.html
-        learning_sets.html
-        view_deck.html
         add_flashcard.html
+        browse_decks.html
+        change_password.html
+        dashboard.html
+        edit_deck.html
         edit_flashcard.html
+        index.html 
+        layout.html
         learn_deck.html
+        learning_sets.html
+        login.html 
+        new_deck.html
+        profile.html 
+        register.html
+        view_deck.html
     }
 
     class Controllers {
         app.py
     }
 
-    Models --> Controllers : "Interacts with"
+    Models --> view : "updates"
     Controllers --> Views : "Renders"
-    Views --> Controllers : "Sends Requests to"
+    Controllers --> Models : "Sends update"
+    Views --> Controllers : "Sends requests to"
 ```
 Understanding the directory structure is crucial for navigating and contributing to the project efficiently. The directory structure provides a clear organization of the different components of the application
 
 - lumen 
-  - templates 
+  - templates
+    - add_flashcard.html
+    - browse_decks.html
+    - change_password.html
+    - dashboard.html
+    - edit_deck.html
+    - edit_flashcard.html
     - index.html 
-    - login.html 
-    - register.html 
-    - dashboard.html 
-    - profile.html 
-    - learning_sets.html 
-    - view_deck.html 
-    - add_flashcard.html 
-    - edit_flashcard.html 
+    - layout.html
     - learn_deck.html
+    - learning_sets.html
+    - login.html 
+    - new_deck.html
+    - profile.html 
+    - register.html
+    - view_deck.html
   - static 
-    - styles.css 
-  - migrations
-    - lumenDB.sqlite
+    - styles.css
   - app.py
-  - models.py
-
+  - db.py
+  
 ## Cross-cutting concerns
 
 ### Security Measures
@@ -137,9 +146,6 @@ Our approach to error handling includes:
 + User-friendly Error Pages: 
   + Custom error pages are created to handle common HTTP errors such as 404 (Not Found) and 500 (Internal Server Error). 
   + These pages provide helpful information to the user without exposing sensitive details about the application.
-
-### Logging
-Logging is implemented to track significant events and errors within the application. This is essential for debugging and monitoring the application's performance. Logs are stored in a file and include details such as timestamps, error messages, and the context of the error.
 
 ### User Login
 
@@ -187,6 +193,3 @@ sequenceDiagram
     Browser ->> Server: Redirect to dashboard
     Server ->> Browser: Render dashboard
 ```
-
-
-[Describe anything that is important for a solid understanding of your codebase. Most likely, you want to explain the behavior of (parts of) your application. In this section, you may also link to important [design decisions](../design-decisions.md).]
