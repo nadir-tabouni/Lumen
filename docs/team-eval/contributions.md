@@ -26,7 +26,7 @@ Contributions
 : User evaluation
 : UI Design
 : Learn functionality
-: Bug fixing 
+: Bug fixing
 
 
 ## Nadir Tabouni
