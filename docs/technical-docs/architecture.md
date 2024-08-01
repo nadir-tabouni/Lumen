@@ -75,7 +75,7 @@ Flashcard
         app.py
     }
 
-    Models --> view : "updates"
+    Models --> Views : "updates"
     Controllers --> Views : "Renders"
     Controllers --> Models : "Sends update"
     Views --> Controllers : "Sends requests to"
