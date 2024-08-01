@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 {: .label }
-[Lumen]
+Lumen
 
 {: .no_toc }
 # Goals achieved and missed

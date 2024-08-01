@@ -5,7 +5,7 @@ nav_order: 4
 ---
 
 {: .label }
-[Lumen]
+Lumen
 
 {: .no_toc }
 # Summary of individual contributions
@@ -21,17 +21,20 @@ nav_order: 4
 
 Contributions
 : Logo design
-: Documentation
 : Database design
 : Use Case diagram
 : User evaluation
+: UI Design
+: Learn functionality
+: Bug fixing 
 
 
 ## Nadir Tabouni
 
 Contributions
-: Documentation
 : Login/register functionality
 : Database implementation
 : Change password functionality
-: Flashcard Deck/Flashcard creation, editing and learning 
+: Flashcard Deck/Flashcard creation and editing
+: Browse Deck functionality
+: Bug fixing 

@@ -5,6 +5,6 @@ nav_order: 5
 ---
 
 {: .label }
-[Lumen]
+Lumen
 
 # Team evaluation

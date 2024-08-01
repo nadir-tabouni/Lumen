@@ -36,7 +36,7 @@ Key Features:
   + Users can search and browse through all available flashcard decks.
 
 
-![Use Case Diagram](/docs/images/use_case_diagram.png)
+![use_case_diagram](/docs/images/use_case_diagram.png)
 
 
 ## Codemap
@@ -77,7 +77,7 @@ Flashcard
 
     Models --> Views : "updates"
     Controllers --> Views : "Renders"
-    Controllers --> Models : "Sends update"
+    Controllers --> Models : "Sends update to"
     Views --> Controllers : "Sends requests to"
 ```
 Understanding the directory structure is crucial for navigating and contributing to the project efficiently. The directory structure provides a clear organization of the different components of the application

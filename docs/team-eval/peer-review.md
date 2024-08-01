@@ -5,7 +5,7 @@ nav_order: 3
 ---
 
 {: .label }
-[Lumen]
+Lumen
 
 {: .no_toc }
 # Peer review
