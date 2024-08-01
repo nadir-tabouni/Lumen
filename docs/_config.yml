@@ -1,6 +1,4 @@
 title: Lumen
-logo: "/docs/images/lumen_logo.png"
-favicon_ico: "/docs/images/lumen_logo.png"
 remote_theme: just-the-docs/just-the-docs
 mermaid:
   version: "10.9.0" # Pick version from https://cdn.jsdelivr.net/npm/mermaid/
@@ -17,4 +15,3 @@ callouts:
   download:
     title: 💾 Download
     color: grey-dk
-baseurl: ""
