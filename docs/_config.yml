@@ -17,3 +17,4 @@ callouts:
   download:
     title: 💾 Download
     color: grey-dk
+baseurl: ""

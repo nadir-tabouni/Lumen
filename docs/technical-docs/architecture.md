@@ -36,9 +36,10 @@ Key Features:
   + Users can search and browse through all available flashcard decks.
 
 
-![Use Case Diagram](/docs/images/use_case_diagram.png)
+![Use Case Diagram]({{ site.baseurl }}/docs/images/use_case_diagram.png)
 
-<img src="/docs/images/use_case_diagram.png" alt="use_case">
+![Lumen Logo]({{ site.baseurl }}/docs/images/lumen_logo.png)
+
 
 ## Codemap
 
