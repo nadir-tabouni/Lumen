@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/favicon.ico') }}">
 </head>
 <body>
 <header>
-    <a href="/dashboard" class="logo">Lumen</a>
+    <a href="/learning-hub" class="logo">
+        <img src="{{ url_for('static', filename='lumen_logo.jpg') }}" alt="Lumen Logo">
+    </a>
     <nav class="user-actions">
         {% if session.get('user_id') %}
             <a href="/profile" class="button profile">Profile</a>

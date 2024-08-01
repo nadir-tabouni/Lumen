@@ -57,7 +57,7 @@ Flashcard
         add_flashcard.html
         browse_decks.html
         change_password.html
-        dashboard.html
+        learning_hub.html
         edit_deck.html
         edit_flashcard.html
         index.html 
@@ -87,7 +87,7 @@ Understanding the directory structure is crucial for navigating and contributing
     - add_flashcard.html
     - browse_decks.html
     - change_password.html
-    - dashboard.html
+    - learning_hub.html
     - edit_deck.html
     - edit_flashcard.html
     - index.html 
@@ -133,7 +133,7 @@ participant WerkzeugSecurity
     WerkzeugSecurity -->> Server: Verification result
     alt Password correct
         Server ->> Browser: Set session cookie
-        Browser -->> User: Redirect to dashboard
+        Browser -->> User: Redirect to learning hub
     else Password incorrect
         Server -->> Browser: Show error message
         Browser -->> User: Display login error
@@ -164,7 +164,7 @@ participant Database
     Server ->> Database: Query user credentials
     Database -->> Server: Return user data
     Server ->> Browser: Set session cookie
-    Browser -->> User: Redirect to dashboard
+    Browser -->> User: Redirect to learning hub
 ```
 
 ### Learning Mode
@@ -192,6 +192,6 @@ sequenceDiagram
     end
 
     Browser -->> User: Display success message
-    Browser ->> Server: Redirect to dashboard
-    Server ->> Browser: Render dashboard
+    Browser ->> Server: Redirect to learning hub
+    Server ->> Browser: Render learning hub
 ```

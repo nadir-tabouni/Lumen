@@ -84,7 +84,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password_hash, password):
             session['user_id'] = user.id
-            return redirect('/dashboard')
+            return redirect('/learning-hub')
         else:
             return 'Invalid login credentials!'
 
@@ -95,15 +95,15 @@ def login():
 def login_guest():
     # Assign a temporary user_id for guest
     session['user_id'] = 'guest'
-    return redirect('/dashboard')
+    return redirect('/learning-hub')
 
 
-@app.route('/dashboard')
-def dashboard():
+@app.route('/learning-hub')
+def learning_hub():
     if 'user_id' not in session:
         # Redirect to login if not logged in or if the session is not established.
         return redirect('/login')
-    return render_template('dashboard.html')
+    return render_template('learning_hub.html')
 
 
 @app.route('/profile')

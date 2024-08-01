@@ -6,6 +6,9 @@
 
 {% block content %}
     <div class="content-container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/deck/{{ flashcard.deck_id }}" class="button back-button">← Back to Decks</a>
+        </div>
         <h1>Edit Flashcard</h1>
         <form action="/flashcard/{{ flashcard.id }}/edit" method="post">
             <label for="question">Question:</label>
@@ -14,6 +17,5 @@
             <input type="text" id="answer" name="answer" value="{{ flashcard.answer }}" required>
             <button type="submit" class="button">Save Changes</button>
         </form>
-        <a href="/deck/{{ flashcard.deck_id }}" class="button">Back to Deck</a>
     </div>
 {% endblock %}

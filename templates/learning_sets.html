@@ -6,7 +6,11 @@
 
 {% block content %}
     <div class="content-container">
-        <h1>Flashcard Decks</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/learning-hub" class="button back-button">← Back to Learning Hub</a>
+            <h1 style="flex-grow: 1; text-align: center;">Flashcard Decks</h1>
+            <div style="width: 100px;"></div>
+        </div>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul class="flashes">
@@ -16,20 +20,19 @@
                 </ul>
             {% endif %}
         {% endwith %}
-        <a href="/new-deck" class="button">Create New Deck</a>
         <ul>
             {% for deck in decks %}
                 <li class="deck-item">
                     <span class="deck-name">{{ deck.name }}</span> - <span class="deck-description">{{ deck.description }}</span>
                     <div class="deck-actions">
-                        <!-- Learn button (future implementation could link to a learning mode view) -->
                         <a href="/deck/{{ deck.id }}/learn" class="button">Learn</a>
-                        <!-- Edit button takes you to the view_deck.html -->
                         <a href="/deck/{{ deck.id }}" class="button">Edit</a>
                     </div>
                 </li>
             {% endfor %}
         </ul>
-        <a href="/dashboard" class="button">Back to Dashboard</a>
+        <div style="display: flex; justify-content: space-between;">
+            <a href="/new-deck" class="button">+ Create New Deck</a>
+        </div>
     </div>
 {% endblock %}

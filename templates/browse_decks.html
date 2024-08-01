@@ -6,6 +6,7 @@
 
 {% block content %}
     <div class="content-container">
+        <a href="/learning-hub" class="button back-button">← Back to Learning Hub</a>
         <h1>Browse Flashcard Decks</h1>
         <form method="POST" action="/browse-decks">
             <input type="text" name="search" placeholder="Search decks by name" value="{{ search_query }}">
@@ -22,6 +23,5 @@
                 </li>
             {% endfor %}
         </ul>
-        <a href="/dashboard" class="button">Back to Dashboard</a>
     </div>
 {% endblock %}

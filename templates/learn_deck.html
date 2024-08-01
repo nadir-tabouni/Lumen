@@ -12,17 +12,17 @@
                 <div class="flashcard" id="card-{{ flashcard.id }}" style="display: none;">
                     <p><strong>Question:</strong> {{ flashcard.question }}</p>
                     <p><strong>Answer:</strong> <span style="display: none;" class="answer">{{ flashcard.answer }}</span></p>
-                    <button onclick="toggleAnswer({{ flashcard.id }})">Show/Hide Answer</button>
+                    <button class="button" onclick="toggleAnswer({{ flashcard.id }})">Show/Hide Answer</button>
                     <br>
-                    <button onclick="markCard({{ flashcard.id }}, true)">I knew it</button>
-                    <button onclick="markCard({{ flashcard.id }}, false)">I didn't know it</button>
+                    <button class="button" onclick="markCard({{ flashcard.id }}, true)">Memorized</button>
+                    <button class="button" onclick="markCard({{ flashcard.id }}, false)">Not Memorized</button>
                 </div>
             {% endfor %}
         </div>
-        <button id="next-btn" onclick="nextCard()">Next Card</button>
+        <button id="next-btn" class="button" onclick="nextCard()">Next Card</button>
         <div id="success-message" style="display: none;">
             <h2>Success! You have learned all flashcards.</h2>
-            <button onclick="location.href='/dashboard'">Go to Dashboard</button>
+            <button class="button" onclick="location.href='/learning-hub'">Go to Learning Hub</button>
         </div>
     </div>
 

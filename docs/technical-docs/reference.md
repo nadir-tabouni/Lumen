@@ -77,7 +77,7 @@ Nadir Tabouni
 **Sample output:**
 
 + GET: Browser shows the login form (login.html)
-+ POST (successful login): Redirects to the /dashboard page
++ POST (successful login): Redirects to the /learning hub page
 + POST (invalid login): Shows the error message: 'Invalid login credentials!'
 
 ---
@@ -95,7 +95,7 @@ Nadir Tabouni
 
 **Sample output:**
 
-+ Redirects to the /dashboard page.
++ Redirects to the /learning hub page.
 
 ---
 ### `logout()`
@@ -118,21 +118,21 @@ Nadir Tabouni
 ## User Management
 
 
-### `dashboard()`
+### `learning_hub()`
 
 
-**Route:** `/dashboard`
+**Route:** `/learning-hub`
 
 
 **Methods:** `GET`
 
 
-**Purpose:** Display the user's dashboard with options to manage flashcard decks and access the learning mode.
+**Purpose:** Display the user's learning hub with options to manage learning sets and browse flashcard decks.
 
 
 **Sample output:**
 
-+ Browser shows the dashboard page (dashboard.html)
++ Browser shows the learning hub page (learning_hub.html)
 
 ---
 ### `profile()`
